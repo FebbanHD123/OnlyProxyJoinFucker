@@ -9,6 +9,8 @@ import joptsimple.OptionSet;
 import joptsimple.OptionSpec;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OnlyProxyJoinFucker {
 
@@ -50,6 +52,7 @@ public class OnlyProxyJoinFucker {
     private int wave = 0;
     private final String host;
     private final int port;
+    private List<FBot> onlineBots = new ArrayList<>();
 
     public OnlyProxyJoinFucker(String host, int port) throws IOException, InterruptedException {
         this.host = host;
@@ -64,10 +67,11 @@ public class OnlyProxyJoinFucker {
                 FBot bot = BotFactory.createBot(playerName);
                 bot.connect(this.host, this.port, () -> {
                     System.out.println(playerName + " was kicked :)");
-                    bot.disconnect();
                 });
+                onlineBots.add(bot);
             }
             Thread.sleep(5000);
+            this.onlineBots.forEach(FBot::disconnect);
         }
     }
 }
