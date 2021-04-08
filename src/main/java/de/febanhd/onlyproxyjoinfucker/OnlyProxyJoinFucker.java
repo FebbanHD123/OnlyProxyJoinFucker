@@ -61,6 +61,7 @@ public class OnlyProxyJoinFucker {
         System.out.println("Starting Only Proxy Join Fucker on " + host + ":" + port);
 
         while(true) {
+            Thread.sleep(1000);
             this.wave++;
             System.out.println("Starting wave #" + this.wave);
             for (String playerName : PingUtil.getPlayerNames(this.host, this.port)) {
@@ -70,7 +71,7 @@ public class OnlyProxyJoinFucker {
                 });
                 onlineBots.add(bot);
             }
-            Thread.sleep(5000);
+            Thread.sleep(4000);
             this.onlineBots.forEach(bot -> {
                 if(bot.isConnected()) {
                     bot.disconnect();
