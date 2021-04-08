@@ -71,7 +71,11 @@ public class OnlyProxyJoinFucker {
                 onlineBots.add(bot);
             }
             Thread.sleep(5000);
-            this.onlineBots.forEach(FBot::disconnect);
+            this.onlineBots.forEach(bot -> {
+                if(bot.isConnected()) {
+                    bot.disconnect();
+                }
+            });
         }
     }
 }
