@@ -18,9 +18,9 @@
         <dependency>
             <groupId>de.febanhd</groupId>
             <artifactId>FBot</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <scope>system</scope>
-            <systemPath>G:/development/FBot/FBot-1.0.0.jar</systemPath>
+            <systemPath>G:/development/FBot/FBot-1.0.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>

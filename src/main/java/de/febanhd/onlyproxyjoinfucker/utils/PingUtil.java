@@ -19,7 +19,7 @@ public class PingUtil {
 
     public static List<String> getPlayerNames(String host, int port) throws IOException {
         Socket socket = new Socket();
-        socket.connect(new InetSocketAddress(host, port), 30);
+        socket.connect(new InetSocketAddress(host, port));
         DataInputStream in = new DataInputStream(socket.getInputStream());
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
         ByteArrayOutputStream handshake_bytes = new ByteArrayOutputStream();
